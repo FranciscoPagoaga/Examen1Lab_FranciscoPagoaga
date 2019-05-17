@@ -105,16 +105,17 @@ public class Menu extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         if ("admin".equals(jb_usuario.getText())&& "libro".equals(jb_password.getText())) {
-            permisoadmin=true;
+            
             JOptionPane.showMessageDialog(this, "Ha iniciado sesion como administrador");
             this.dispose();
             Admin a=new Admin();
             a.setVisible(true);
-        }
-        if (("cleinte1".equals(jb_usuario.getText())&& "leo".equals(jb_password.getText()))||("cleinte2".equals(jb_usuario.getText())&& "diego".equals(jb_password.getText()))) {
-            permisoclien=true;
+        }else if (("cleinte1".equals(jb_usuario.getText())&& "leo".equals(jb_password.getText()))||("cleinte2".equals(jb_usuario.getText())&& "diego".equals(jb_password.getText()))) {
             JOptionPane.showMessageDialog(this, "Ha iniciado sesion como cleinte");
+        }else{
+            JOptionPane.showMessageDialog(this,"Ingrese contraseña o usuario correcta");
         }
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -160,8 +161,4 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jb_password;
     private javax.swing.JTextField jb_usuario;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Libros> libros=new ArrayList();
-    boolean permisoadmin=false;
-    boolean permisoclien=false;
-   
 }
